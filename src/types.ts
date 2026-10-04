@@ -28,6 +28,7 @@ export interface Tool {
   name: string
   role: string
   color: string
+  category: 'ai' | 'editing' | 'management' | 'communication'
 }
 
 export interface TimelineStep {

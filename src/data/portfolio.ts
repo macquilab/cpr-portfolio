@@ -33,12 +33,39 @@ export const timeline: TimelineStep[] = [
 ]
 
 export const tools: Tool[] = [
-  { shortName: 'AI', name: 'Generative video', role: 'Concept & scene creation', color: '#e26d43' },
-  { shortName: 'Pr', name: 'Premiere Pro', role: 'Edit & story', color: '#8d85ff' },
-  { shortName: 'Ae', name: 'After Effects', role: 'Motion & compositing', color: '#9da7ff' },
-  { shortName: 'Ps', name: 'Photoshop', role: 'Graphics & cleanup', color: '#52aaff' },
-  { shortName: 'Cc', name: 'CapCut', role: 'Social-first edits', color: '#f0eadd' },
-  { shortName: 'Ca', name: 'Canva', role: 'Design support', color: '#45d5d0' },
+  { shortName: 'V3', name: 'Veo 3', role: 'AI video generation', color: '#4285f4', category: 'ai' },
+  { shortName: 'Hg', name: 'Higgsfield', role: 'Cinematic AI video', color: '#c6ff00', category: 'ai' },
+  { shortName: 'Kie', name: 'Kie.ai', role: 'AI generation platform', color: '#1976d2', category: 'ai' },
+  { shortName: 'Kl', name: 'Kling AI', role: 'AI video generation', color: '#f0eadd', category: 'ai' },
+  { shortName: 'Hg', name: 'HeyGen', role: 'AI avatars & video', color: '#20d9c5', category: 'ai' },
+  { shortName: 'Fal', name: 'Fal.ai', role: 'Generative media models', color: '#f40b4e', category: 'ai' },
+  { shortName: 'Fl', name: 'Flow AI', role: 'AI creative workflows', color: '#f0eadd', category: 'ai' },
+  { shortName: 'Ar', name: 'Arcads', role: 'AI ad creation', color: '#8e84ff', category: 'ai' },
+  { shortName: 'OA', name: 'OpenArt', role: 'AI image creation', color: '#f0eadd', category: 'ai' },
+  { shortName: 'Ca', name: 'Canva', role: 'Design & layouts', color: '#45d5d0', category: 'editing' },
+  { shortName: 'Pr', name: 'Premiere Pro', role: 'Editing & storytelling', color: '#8d85ff', category: 'editing' },
+  { shortName: 'Ps', name: 'Photoshop', role: 'Graphics & cleanup', color: '#52aaff', category: 'editing' },
+  { shortName: 'Cc', name: 'CapCut', role: 'Social-first edits', color: '#f0eadd', category: 'editing' },
+  { shortName: 'Pi', name: 'Pictory', role: 'AI video creation', color: '#f0eadd', category: 'editing' },
+  { shortName: '11', name: 'ElevenLabs', role: 'AI voice & audio', color: '#d8d5ce', category: 'editing' },
+  { shortName: 'Px', name: 'PixVerse', role: 'AI video generation', color: '#986cff', category: 'editing' },
+  { shortName: 'As', name: 'Asana', role: 'Project planning', color: '#ff7262', category: 'management' },
+  { shortName: 'M', name: 'monday.com', role: 'Workflow management', color: '#ffd329', category: 'management' },
+  { shortName: 'N', name: 'Notion', role: 'Docs & organization', color: '#f0eadd', category: 'management' },
+  { shortName: 'Tr', name: 'Trello', role: 'Task tracking', color: '#0c88c7', category: 'management' },
+  { shortName: 'Cu', name: 'ClickUp', role: 'Projects & tasks', color: '#ff4f9a', category: 'management' },
+  { shortName: 'Wa', name: 'WhatsApp', role: 'Client messaging', color: '#25d366', category: 'communication' },
+  { shortName: 'Tg', name: 'Telegram', role: 'Fast communication', color: '#2aabee', category: 'communication' },
+  { shortName: 'Sl', name: 'Slack', role: 'Team communication', color: '#e01e5a', category: 'communication' },
+  { shortName: 'Pu', name: 'Pumble', role: 'Team messaging', color: '#7c45c8', category: 'communication' },
+  { shortName: 'Dc', name: 'Discord', role: 'Community chat', color: '#5865f2', category: 'communication' },
+]
+
+export const toolCategories = [
+  { id: 'ai' as const, label: 'AI tools utilized' },
+  { id: 'editing' as const, label: 'Editing software' },
+  { id: 'management' as const, label: 'Managing tools' },
+  { id: 'communication' as const, label: 'Communication' },
 ]
 
 export const services: Service[] = [
@@ -102,20 +129,14 @@ export const projects: Project[] = Array.from({ length: 10 }, (_, index) => {
 export const contactLinks: ContactLink[] = [
   {
     label: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
-    placeholder: true,
+    value: 'christianpaulregacho@gmail.com',
+    href: 'mailto:christianpaulregacho@gmail.com',
+    placeholder: false,
   },
   {
-    label: 'Instagram',
-    value: '@yourhandle',
-    href: '#contact',
-    placeholder: true,
-  },
-  {
-    label: 'LinkedIn',
-    value: '/in/your-profile',
-    href: '#contact',
-    placeholder: true,
+    label: 'WhatsApp',
+    value: '+639451753568',
+    href: 'https://wa.me/639451753568',
+    placeholder: false,
   },
 ]

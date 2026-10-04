@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { contactLinks, projects, services, timeline, tools } from './data/portfolio'
+import { contactLinks, projects, services, timeline, toolCategories, tools } from './data/portfolio'
 import type { Project } from './types'
 import { Header } from './components/Header'
 import { Logo } from './components/Logo'
 import { SectionHeading } from './components/SectionHeading'
 import { VideoCard } from './components/VideoCard'
 import { VideoModal } from './components/VideoModal'
+import { BrandIcon } from './components/BrandIcon'
 
 const sectionIds = ['about', 'process', 'tools', 'services', 'work', 'contact']
 
@@ -117,13 +118,23 @@ function App() {
         </section>
 
         <section id="tools" className="section tools-section" aria-labelledby="tools-title">
-          <SectionHeading eyebrow="03 / Toolkit" title="AI generation, finished by hand." />
-          <div className="tool-grid">
-            {tools.map((tool) => (
-              <article className="tool-card reveal" key={tool.name} style={{ '--tool-color': tool.color } as React.CSSProperties}>
-                <span className="tool-icon">{tool.shortName}</span>
-                <div><h3>{tool.name}</h3><p>{tool.role}</p></div>
-              </article>
+          <SectionHeading eyebrow="03 / Toolkit" title="The tools behind every finished ad." />
+          <div className="tool-groups">
+            {toolCategories.map((category) => (
+              <section className="tool-group reveal" key={category.id} aria-labelledby={`tools-${category.id}`}>
+                <div className="tool-group-heading">
+                  <h3 id={`tools-${category.id}`}>{category.label}</h3>
+                  <span>{String(tools.filter((tool) => tool.category === category.id).length).padStart(2, '0')}</span>
+                </div>
+                <div className="tool-grid">
+                  {tools.filter((tool) => tool.category === category.id).map((tool) => (
+                    <article className="tool-card" key={tool.name} style={{ '--tool-color': tool.color } as React.CSSProperties}>
+                      <span className="tool-icon" aria-hidden="true"><BrandIcon name={tool.name} /></span>
+                      <div><h4>{tool.name}</h4><p>{tool.role}</p></div>
+                    </article>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
           <p className="tool-note reveal">AI accelerates the canvas. Human judgment shapes the ad.</p>
@@ -164,7 +175,7 @@ function App() {
           <p className="contact-intro reveal">Share the product, audience, platform, and feeling you want to create. We’ll build the world around it.</p>
           <div className="contact-links reveal">
             {contactLinks.map((link) => (
-              <a key={link.label} href={link.href} onClick={link.href.startsWith('#') ? (event) => event.preventDefault() : undefined}>
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined}>
                 <span>{link.label}{link.placeholder && <small>Placeholder</small>}</span>
                 <strong>{link.value}</strong>
                 <i aria-hidden="true">↗</i>
