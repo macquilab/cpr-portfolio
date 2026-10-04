@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Christian Paul Regacho portfolio</title>
+  <desc id="desc">CPR monogram and AI Ads Specialist title on a charcoal background.</desc>
+  <rect width="1200" height="630" fill="#11110f"/>
+  <circle cx="1050" cy="-40" r="360" fill="#e26d43" opacity=".12"/>
+  <path d="M112 117h190c80 0 130 48 130 120s-50 120-130 120H192v120h-80V117Zm80 70v100h100c40 0 60-20 60-50s-20-50-60-50H192Z" fill="#f0eadd"/>
+  <path d="m262 217 80 50-80 50V217Z" fill="#e26d43"/>
+  <text x="520" y="270" fill="#f0eadd" font-family="Arial, sans-serif" font-size="68" font-weight="700">CHRISTIAN PAUL</text>
+  <text x="520" y="348" fill="#f0eadd" font-family="Arial, sans-serif" font-size="68" font-weight="700">REGACHO</text>
+  <text x="525" y="420" fill="#e26d43" font-family="monospace" font-size="30" letter-spacing="6">AI ADS SPECIALIST</text>
+</svg>
