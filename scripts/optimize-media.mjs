@@ -11,7 +11,7 @@ if (!ffmpegPath) throw new Error('ffmpeg-static binary is unavailable.')
 mkdirSync(outputDir, { recursive: true })
 
 const inputs = readdirSync(sourceDir)
-  .filter((file) => /^sample-edit-(?:[1-9]|10)\.mp4$/i.test(file))
+  .filter((file) => /^sample-edit-(?:[1-9]|1[0-8])\.mp4$/i.test(file))
   .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
 
 if (!inputs.length) {

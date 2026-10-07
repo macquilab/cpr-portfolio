@@ -4,11 +4,11 @@ import { describe, expect, it } from 'vitest'
 import App from './App'
 
 describe('portfolio', () => {
-  it('renders the core sections and all ten projects', () => {
+  it('renders the core sections and all eighteen projects', () => {
     render(<App />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AI ads built')
     expect(screen.getByRole('heading', { name: /AI makes the scenes/i })).toBeInTheDocument()
-    expect(screen.getAllByRole('button', { name: /Play AI ad study/i })).toHaveLength(10)
+    expect(screen.getAllByRole('button', { name: /Play AI ad study/i })).toHaveLength(18)
     expect(screen.getByRole('heading', { name: 'Editing software' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'AI tools utilized' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Managing tools' })).toBeInTheDocument()
@@ -39,6 +39,6 @@ describe('portfolio', () => {
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: 'AI UGC' }))
-    expect(screen.getAllByRole('button', { name: /Play AI ad study/i })).toHaveLength(3)
+    expect(screen.getAllByRole('button', { name: /Play AI ad study/i })).toHaveLength(7)
   })
 })

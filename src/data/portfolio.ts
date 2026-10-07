@@ -104,11 +104,13 @@ export const services: Service[] = [
 const categoryByIndex = [
   'AI UGC', 'AI UGC', 'AI Story Ad', 'AI Story Ad', 'AI Product Ad',
   'AI Product Ad', 'AI UGC', 'AI Story Ad', 'AI Direct Response', 'AI Direct Response',
+  'AI UGC', 'AI UGC', 'AI Direct Response', 'AI Direct Response', 'AI Product Ad',
+  'AI Product Ad', 'AI UGC', 'AI UGC',
 ]
 
-const ratioByIndex: Project['aspectRatio'][] = Array.from({ length: 10 }, () => 'portrait')
+const ratioByIndex: Project['aspectRatio'][] = Array.from({ length: 18 }, () => 'portrait')
 
-export const projects: Project[] = Array.from({ length: 10 }, (_, index) => {
+export const projects: Project[] = Array.from({ length: 18 }, (_, index) => {
   const number = index + 1
   const slug = `sample-edit-${number}`
   return {
@@ -119,8 +121,8 @@ export const projects: Project[] = Array.from({ length: 10 }, (_, index) => {
     aspectRatio: ratioByIndex[index],
     poster: `/media/optimized/${slug}.jpg`,
     sources: [
-      { src: `/media/optimized/${slug}.webm`, type: 'video/webm' },
-      { src: `/media/optimized/${slug}.mp4`, type: 'video/mp4' },
+      ...(number <= 11 ? [{ src: `/media/optimized/${slug}.webm`, type: 'video/webm' as const }] : []),
+      { src: `/media/optimized/${slug}.mp4`, type: 'video/mp4' as const },
     ],
     description: `${categoryByIndex[index]} concept using AI-generated visuals and post-production by Christian Paul Regacho.`,
   }

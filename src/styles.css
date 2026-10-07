@@ -244,6 +244,24 @@ footer p span, .footer-note, footer a { color: var(--paper-muted); font-family: 
   footer > a { grid-column: 1/-1; }
 }
 
+@media (max-width: 380px) {
+  .site-header { padding-inline: 16px; }
+  nav { padding-inline: 16px; }
+  .hero { padding-inline: 16px; }
+  .hero-kicker { left: 16px; }
+  .hero h1 { font-size: clamp(46px, 15vw, 58px); }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .button, .button-primary { width: 100%; min-width: 0; }
+  .section { padding: 80px 16px; }
+  .section-heading h2, .about h2, .contact h2 { overflow-wrap: anywhere; font-size: clamp(36px, 12vw, 46px); }
+  .about-poster { min-height: 390px; }
+  .tool-grid { grid-template-columns: minmax(0, 1fr); }
+  .tool-card { min-width: 0; min-height: 160px; padding: 20px; }
+  .tool-group-heading h3 { min-width: 0; overflow-wrap: anywhere; }
+  .contact-links a { min-width: 0; padding-inline: 18px; }
+  .contact-links strong { min-width: 0; overflow-wrap: anywhere; }
+  footer { padding-inline: 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
